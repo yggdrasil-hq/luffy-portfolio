@@ -1,0 +1,9 @@
+apiVersion: v2
+name: primary
+description: >-
+  Yggdrasil-managed primary deployment chart (ADR 003 §12). Strict template —
+  not intended to be hand-edited; Yggdrasil regenerates this during project
+  setup.
+type: application
+version: 0.1.0
+appVersion: "1.0"
