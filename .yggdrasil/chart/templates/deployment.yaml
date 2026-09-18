@@ -20,12 +20,13 @@ spec:
         # just because a referenced Secret was updated (envFrom is read once
         # at container start).
         checksum/project-env: {{ .Values.secretsChecksum | default "" | quote }}
+        checksum/Dockerfile: {{ .Values.dockerfileChecksum | default "" | quote }}
     spec:
       containers:
         - name: app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
-            - containerPort: 80
+            - containerPort: 3000
           # Name must match k8s.ProjectSecretName (orchestrator internal/k8s/secret.go).
           envFrom:
             - secretRef:

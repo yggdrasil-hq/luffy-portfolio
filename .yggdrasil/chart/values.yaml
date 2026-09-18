@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nginxdemos/hello
+  repository: luffy-portfolio
   tag: latest
 
 resources:
@@ -11,3 +11,6 @@ resources:
   limits:
     cpu: 500m
     memory: 256Mi
+
+# CI-managed checksum of the Dockerfile to trigger rollouts when the image changes.
+dockerfileChecksum: ""
